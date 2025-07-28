@@ -18,8 +18,8 @@ body {
 	background: rgba(255, 255, 255, 0.1);
 	border-radius: 50%;
 	border: 8px solid transparent;
-    transform-origin: bottom center;
-    animation: moving 5s linear infinite;
+	transform-origin: bottom center;
+	animation: moving 5s linear infinite;
 }
 .bowl::before {
 	content: "";
@@ -55,6 +55,8 @@ body {
 	border-bottom-left-radius: 150px;
 	border-bottom-right-radius: 150px;
 	filter: drop-shadow(0 0 80px #41c1fb);
+    transform-origin: top center;
+	animation: liquidMoving 5s linear infinite;
 }
 .liquid::before {
 	content: "";
@@ -75,24 +77,43 @@ body {
 	width: 300px;
 	height: 30px;
 	background: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
+	border-radius: 50%;
 }
 
-
 @keyframes moving {
-    0% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(15deg);
-    }
-    50% {
-        transform: rotate(0deg);
-    }
-    75% {
-        transform: rotate(-15deg);
-    }
-    100% {
-        transform: rotate(0deg);
-    }
+	0% {
+		filter: hue-rotate(0deg);
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(15deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(-15deg);
+	}
+	100% {
+		filter: hue-rotate(360deg);
+		transform: rotate(0deg);
+	}
+}
+
+@keyframes liquidMoving {
+	0% {
+		transform: rotate(0deg);
+	}
+	25% {
+		transform: rotate(-20deg);
+	}
+	50% {
+		transform: rotate(0deg);
+	}
+	75% {
+		transform: rotate(20deg);
+	}
+	100% {
+		transform: rotate(0deg);
+	}
 }
